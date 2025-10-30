@@ -28,7 +28,7 @@ public RegisterAccountPage clickOnRegister()
 	return new RegisterAccountPage(driver);
 	}
 
-@FindBy(linkText="Login")
+@FindBy(xpath="//ul[@class='dropdown-menu dropdown-menu-right']/li[2]/a")
 private WebElement LoginOption;
 public LoginPage selectLoginOption() {
 	LoginOption.click();

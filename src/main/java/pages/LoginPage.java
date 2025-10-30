@@ -17,5 +17,12 @@ public class LoginPage {
 	public boolean textNewCostomerDisplayed() {
 		return textNewCostomer.isDisplayed();
 	}
+	@FindBy(linkText="Continue")
+	private WebElement clickContinue;
+	public  RegisterAccountPage clickContinueButton()
+	{
+		clickContinue.click();
+		return new  RegisterAccountPage(driver);
+	}
 
 }

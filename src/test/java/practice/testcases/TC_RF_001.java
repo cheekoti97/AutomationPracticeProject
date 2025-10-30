@@ -38,7 +38,7 @@ public class TC_RF_001 extends Base {
         prop = CommonUtils.LoadProperties();
         homePage=new HomePage(driver);
         homePage.clickOnMyAccount();
-        RegisterAccountPage = homePage.clickOnRegister();
+        //RegisterAccountPage = homePage.clickOnRegister();
        
 		
 	}
@@ -158,11 +158,14 @@ public class TC_RF_001 extends Base {
     @Test(priority=4)
     public void loginOption() throws InterruptedException
     {
-    	 homePage.clickOnMyAccount();
-    	 Thread.sleep(3000);
+    	// homePage.clickOnMyAccount();
+    	 //Thread.sleep(3000);
     	 loginPage =homePage.selectLoginOption();
     	 Thread.sleep(3000);
     	Assert.assertTrue(loginPage.textNewCostomerDisplayed());
+    	RegisterAccountPage = loginPage.clickContinueButton();
+    	RegisterAccountPage.enterFirstName(prop.getProperty("firstName"));
+    	Thread.sleep(3000);
     	driver.getCurrentUrl();
     	System.out.println(driver.getCurrentUrl());
     	Thread.sleep(3000);
