@@ -163,6 +163,8 @@ public class TC_RF_001 extends Base {
     	 loginPage =homePage.selectLoginOption();
     	 Thread.sleep(3000);
     	Assert.assertTrue(loginPage.textNewCostomerDisplayed());
+    	driver.getCurrentUrl();
+    	System.out.println(driver.getCurrentUrl());
     	Thread.sleep(3000);
     	
     }
