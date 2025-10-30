@@ -1,45 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="3" total="4" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-10-29T16:10:46 IST" name="Default suite" finished-at="2025-10-29T16:12:27 IST" duration-ms="100791">
+  <suite started-at="2025-10-30T13:33:05 IST" name="Default suite" finished-at="2025-10-30T13:33:20 IST" duration-ms="15186">
     <groups>
     </groups>
-    <test started-at="2025-10-29T16:10:46 IST" name="Default test" finished-at="2025-10-29T16:12:27 IST" duration-ms="100791">
+    <test started-at="2025-10-30T13:33:05 IST" name="Default test" finished-at="2025-10-30T13:33:20 IST" duration-ms="15186">
       <class name="practice.testcases.TC_RF_001">
-        <test-method is-config="true" signature="LoadBrowse()[pri:0, instance:practice.testcases.TC_RF_001@31368b99]" started-at="2025-10-29T16:10:46 IST" name="LoadBrowse" finished-at="2025-10-29T16:10:51 IST" duration-ms="4856" status="PASS">
+        <test-method is-config="true" signature="LoadBrowse()[pri:0, instance:practice.testcases.TC_RF_001@76508ed1]" started-at="2025-10-30T13:33:05 IST" name="LoadBrowse" finished-at="2025-10-30T13:33:10 IST" duration-ms="4696" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LoadBrowse -->
-        <test-method signature="VerfyRegistrationIsSucess()[pri:1, instance:practice.testcases.TC_RF_001@31368b99]" started-at="2025-10-29T16:10:51 IST" name="VerfyRegistrationIsSucess" finished-at="2025-10-29T16:11:12 IST" duration-ms="20647" status="PASS">
+        <test-method signature="loginOption()[pri:4, instance:practice.testcases.TC_RF_001@76508ed1]" started-at="2025-10-30T13:33:10 IST" name="loginOption" finished-at="2025-10-30T13:33:19 IST" duration-ms="9791" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- VerfyRegistrationIsSucess -->
-        <test-method is-config="true" signature="TearDown()[pri:0, instance:practice.testcases.TC_RF_001@31368b99]" started-at="2025-10-29T16:11:12 IST" name="TearDown" finished-at="2025-10-29T16:11:12 IST" duration-ms="347" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TearDown -->
-        <test-method is-config="true" signature="LoadBrowse()[pri:0, instance:practice.testcases.TC_RF_001@31368b99]" started-at="2025-10-29T16:11:12 IST" name="LoadBrowse" finished-at="2025-10-29T16:11:16 IST" duration-ms="3945" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- LoadBrowse -->
-        <test-method signature="VerfyRegistrationIsSucess1()[pri:2, instance:practice.testcases.TC_RF_001@31368b99]" started-at="2025-10-29T16:11:16 IST" name="VerfyRegistrationIsSucess1" finished-at="2025-10-29T16:11:35 IST" duration-ms="19311" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- VerfyRegistrationIsSucess1 -->
-        <test-method is-config="true" signature="TearDown()[pri:0, instance:practice.testcases.TC_RF_001@31368b99]" started-at="2025-10-29T16:11:35 IST" name="TearDown" finished-at="2025-10-29T16:11:36 IST" duration-ms="274" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- TearDown -->
-        <test-method is-config="true" signature="LoadBrowse()[pri:0, instance:practice.testcases.TC_RF_001@31368b99]" started-at="2025-10-29T16:11:36 IST" name="LoadBrowse" finished-at="2025-10-29T16:11:40 IST" duration-ms="4091" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- LoadBrowse -->
-        <test-method signature="VerifyUsingKeyboard()[pri:3, instance:practice.testcases.TC_RF_001@31368b99]" started-at="2025-10-29T16:11:40 IST" name="VerifyUsingKeyboard" finished-at="2025-10-29T16:12:27 IST" duration-ms="47018" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- VerifyUsingKeyboard -->
-        <test-method is-config="true" signature="TearDown()[pri:0, instance:practice.testcases.TC_RF_001@31368b99]" started-at="2025-10-29T16:12:27 IST" name="TearDown" finished-at="2025-10-29T16:12:27 IST" duration-ms="259" status="PASS">
+        </test-method> <!-- loginOption -->
+        <test-method is-config="true" signature="TearDown()[pri:0, instance:practice.testcases.TC_RF_001@76508ed1]" started-at="2025-10-30T13:33:19 IST" name="TearDown" finished-at="2025-10-30T13:33:20 IST" duration-ms="634" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- TearDown -->

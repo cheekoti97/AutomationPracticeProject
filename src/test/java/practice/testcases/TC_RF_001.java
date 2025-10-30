@@ -1,10 +1,11 @@
 package practice.testcases;
 
 
+import static org.testng.Assert.assertTrue;
+
 import java.time.Duration;
 import java.util.Properties;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -16,6 +17,7 @@ import org.testng.annotations.Test;
 import base.Base;
 import pages.AccountSuccessPage;
 import pages.HomePage;
+import pages.LoginPage;
 import pages.LogoutPage;
 import pages.RegisterAccountPage;
 import utils.CommonUtils;
@@ -28,6 +30,7 @@ public class TC_RF_001 extends Base {
     RegisterAccountPage RegisterAccountPage;
     AccountSuccessPage accountSuccessPage;
     LogoutPage logoutPage;
+    LoginPage loginPage;
 	
 	@BeforeMethod
 	public void LoadBrowse() {
@@ -152,8 +155,17 @@ public class TC_RF_001 extends Base {
     	.sendKeys(Keys.ENTER)
     	.build().perform();
     }
-    
-    
+    @Test(priority=4)
+    public void loginOption() throws InterruptedException
+    {
+    	 homePage.clickOnMyAccount();
+    	 Thread.sleep(3000);
+    	 loginPage =homePage.selectLoginOption();
+    	 Thread.sleep(3000);
+    	Assert.assertTrue(loginPage.textNewCostomerDisplayed());
+    	Thread.sleep(3000);
+    	
+    }
     
     
     

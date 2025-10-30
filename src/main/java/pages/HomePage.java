@@ -28,5 +28,10 @@ public RegisterAccountPage clickOnRegister()
 	return new RegisterAccountPage(driver);
 	}
 
-
+@FindBy(linkText="Login")
+private WebElement LoginOption;
+public LoginPage selectLoginOption() {
+	LoginOption.click();
+	return new LoginPage(driver);
+}
 }
