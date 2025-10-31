@@ -3,12 +3,18 @@ package practice.testcases;
 
 import static org.testng.Assert.assertTrue;
 
+import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.io.FileHandler;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -51,6 +57,14 @@ public class TC_RF_001 extends Base {
 	
     @Test(priority=1)
 	public  void VerfyRegistrationIsSucess() throws InterruptedException {
+    	TakesScreenshot sc=(TakesScreenshot)driver;
+	    File srcScreenshot1 = driver.findElement(By.xpath("/html/body")).getScreenshotAs(OutputType.FILE);
+	    try {
+			FileHandler.copy(srcScreenshot1, new File(System.getProperty("user.dir")+"\\Screenshots\\Sc1.png"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+    	RegisterAccountPage = homePage.clickOnRegister();
     	RegisterAccountPage.enterFirstName(prop.getProperty("firstName"));
 		Thread.sleep(2000);
 		RegisterAccountPage.enterLastName(prop.getProperty("lastName"));
@@ -90,6 +104,7 @@ public class TC_RF_001 extends Base {
     @Test(priority=2)
     public  void VerfyRegistrationIsSucess1() throws InterruptedException
     {
+    	RegisterAccountPage = homePage.clickOnRegister();
     	RegisterAccountPage.enterFirstName(prop.getProperty("firstName"));
 		//driver.findElement(By.id("input-firstname")).sendKeys(prop.getProperty("firstName"));
     	RegisterAccountPage.enterLastName(prop.getProperty("lastName"));
@@ -129,10 +144,12 @@ public class TC_RF_001 extends Base {
     public void VerifyUsingKeyboard()
     {
     	Actions act=new Actions(driver);
+    	//RegisterAccountPage = homePage.clickOnRegister();
     	//for(int i=1;i<=3;i++) {
     	//act.sendKeys(Keys.TAB).perform();
     	//}
-    	//act.sendKeys(Keys.ENTER).pause(Duration.ofSeconds(3)).sendKeys(Keys.TAB).pause(Duration.ofSeconds(3)).sendKeys(Keys.ENTER).pause(Duration.ofSeconds(3)).build().perform();
+    	//act.sendKeys(Keys.ENTER).pause(Duration.ofSeconds(3))
+    	act.sendKeys(Keys.TAB).pause(Duration.ofSeconds(3)).sendKeys(Keys.ENTER).pause(Duration.ofSeconds(3)).build().perform();
     	for(int i=1;i<=23;i++) {
     		act.sendKeys(Keys.TAB).perform();
     	}
@@ -158,15 +175,33 @@ public class TC_RF_001 extends Base {
     @Test(priority=4)
     public void loginOption() throws InterruptedException
     {
-    	// homePage.clickOnMyAccount();
-    	 //Thread.sleep(3000);
-    	 loginPage =homePage.selectLoginOption();
-    	 Thread.sleep(3000);
+    	 // homePage.clickOnMyAccount();
+    	//Thread.sleep(3000);
+    	loginPage =homePage.selectLoginOption();
+    	Thread.sleep(3000);
     	Assert.assertTrue(loginPage.textNewCostomerDisplayed());
     	RegisterAccountPage = loginPage.clickContinueButton();
     	RegisterAccountPage.enterFirstName(prop.getProperty("firstName"));
     	Thread.sleep(3000);
-    	driver.getCurrentUrl();
+    	RegisterAccountPage.enterLastName(prop.getProperty("lastName"));
+    	Thread.sleep(3000);
+    	RegisterAccountPage.enterEmailId(CommonUtils.AutoEmailUpdate());
+    	Thread.sleep(3000);
+    	RegisterAccountPage.enterPhoneNumber(prop.getProperty("mobileNo"));
+    	Thread.sleep(3000);
+    	RegisterAccountPage.enterPassword(prop.getProperty("password"));
+    	Thread.sleep(3000);
+    	RegisterAccountPage.enterConfirmPassword(prop.getProperty("confirmPassword"));
+    	Thread.sleep(3000);
+    	RegisterAccountPage.radioButtonSelect();
+    	Thread.sleep(3000);
+		RegisterAccountPage.selectPolicy();
+		Thread.sleep(3000);
+		accountSuccessPage = RegisterAccountPage.clickContinue();
+		Thread.sleep(3000);
+		accountSuccessPage.checkDisplayed1();
+		Thread.sleep(3000);
+	    driver.getCurrentUrl();
     	System.out.println(driver.getCurrentUrl());
     	Thread.sleep(3000);
     	
